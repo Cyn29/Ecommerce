@@ -1,5 +1,6 @@
 :root {
     --black-color: #000;
+    --white-color: #fff;
     --blue-color: #3fbcb5;
     --orange-color: #df6a45;
     --red-color: #c63131;
@@ -16,4 +17,5 @@
 body {
     width: 100%;
     min-height: 100%;
+    background-color: var(--black-color);
 }
