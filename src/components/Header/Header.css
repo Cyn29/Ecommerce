@@ -20,8 +20,12 @@
     color: var(--black-color);
 }
 
-img {
+.navbar__logo {
     height: 7rem;
+}
+
+.navbar__logout {
+    height: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -40,7 +44,7 @@ img {
         gap: 2em;
     }
 
-    img {
+    .navbar__logo {
         width: 10rem;
         height: 7rem;
     }

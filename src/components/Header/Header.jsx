@@ -1,19 +1,20 @@
 import "./Header.css";
 import logo from "../../assets/logo.jpg";
+import logout from "../../assets/icons/logout.png"
 
 function Header() {
     return (
         <>
             <div className="header">
                 <nav className="navbar">
-                    <div className="navbar__logo">
-                        <img src={logo} />
+                    <div >
+                        <img className="navbar__logo" src={logo} />
                     </div>
                     <div className="navbar__items">
                         <ul className="navbar__links">
-                            <li>HOME</li>
                             <li>PRODUCTS</li>
                             <li>CONTACT</li>
+                            <li><img className="navbar__logout" src={logout}/></li>
                         </ul>
                     </div>
                 </nav>
