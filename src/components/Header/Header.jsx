@@ -8,7 +8,7 @@ import logouticon from "../../assets/icons/logout.png";
 
 function Header() {
     return (
-        <Navbar expand="lg">
+        <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
                 <Navbar.Brand href="#home">
                     <Image
@@ -20,7 +20,7 @@ function Header() {
                     />
                 </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse  id="basic-navbar-nav">
+                    <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="justify-content-end ml-auto">
                             <Nav.Link href="#products">Products</Nav.Link>
                             <Nav.Link href="#contact">Contact</Nav.Link>
