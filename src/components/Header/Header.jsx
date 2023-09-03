@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../../assets/logo.jpg";
 import logouticon from "../../assets/icons/logout.png";
 
-function Header() {
+function Header () {
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
