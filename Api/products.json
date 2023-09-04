@@ -4,6 +4,7 @@
     {
         "name": "Product 1",
         "description": "description",
+        "fulldescription":"Con una pisada fluida para cualquier carrera, el modelo de Pegasus perfecto para ti vuelve para ayudarte a alcanzar tus objetivos. Esta versión ofrece la misma reactividad y sujeción neutra que tanto te gusta, pero con más comodidad en las zonas sensibles del pie, como el puente y los dedos. Da igual si estás en una maratón, haciendo sesiones de velocidad antes del amanecer o corriendo cuando te apetece",
         "price": "100 €",
         "img": "../src/assets/images/nike/nike1.jpg",
         "id": 1
@@ -11,6 +12,7 @@
     {
         "name": "Product 2",
         "description": "Product 2 description",
+        "fulldescription":"Con una pisada fluida para cualquier carrera, el modelo de Pegasus perfecto para ti vuelve para ayudarte a alcanzar tus objetivos. Esta versión ofrece la misma reactividad y sujeción neutra que tanto te gusta, pero con más comodidad en las zonas sensibles del pie, como el puente y los dedos. Da igual si estás en una maratón, haciendo sesiones de velocidad antes del amanecer o corriendo cuando te apetece",
         "price": "150 €",
         "img": "../src/assets/images/puma/puma1.jpg",
         "id": 2
@@ -18,6 +20,7 @@
     {
         "name": "Product 3",
         "description": "description",
+        "fulldescription":"Con una pisada fluida para cualquier carrera, el modelo de Pegasus perfecto para ti vuelve para ayudarte a alcanzar tus objetivos. Esta versión ofrece la misma reactividad y sujeción neutra que tanto te gusta, pero con más comodidad en las zonas sensibles del pie, como el puente y los dedos. Da igual si estás en una maratón, haciendo sesiones de velocidad antes del amanecer o corriendo cuando te apetece",
         "price": "90 €",
         "img": "../src/assets/images/adidas/adidas1.jpg",
         "id": 3
@@ -25,34 +28,47 @@
     {
         "name": "Product 4",
         "description": "description",
+        "fulldescription":"Con una pisada fluida para cualquier carrera, el modelo de Pegasus perfecto para ti vuelve para ayudarte a alcanzar tus objetivos. Esta versión ofrece la misma reactividad y sujeción neutra que tanto te gusta, pero con más comodidad en las zonas sensibles del pie, como el puente y los dedos. Da igual si estás en una maratón, haciendo sesiones de velocidad antes del amanecer o corriendo cuando te apetece",
         "price": "70 €",
         "img": "../src/assets/images/nike/nike2.jpg",
         "id": 4
     },
     {
-        "name": "Product 1",
+        "name": "Product 5",
         "description": "description",
+        "fulldescription":"Con una pisada fluida para cualquier carrera, el modelo de Pegasus perfecto para ti vuelve para ayudarte a alcanzar tus objetivos. Esta versión ofrece la misma reactividad y sujeción neutra que tanto te gusta, pero con más comodidad en las zonas sensibles del pie, como el puente y los dedos. Da igual si estás en una maratón, haciendo sesiones de velocidad antes del amanecer o corriendo cuando te apetece",
         "price": "100 €",
         "img": "../src/assets/images/nike/nike1.jpg",
         "id": 5
     },
     {
-        "name": "Product 2",
+        "name": "Product 6",
         "description": "Product 2 description",
+        "fulldescription":"Con una pisada fluida para cualquier carrera, el modelo de Pegasus perfecto para ti vuelve para ayudarte a alcanzar tus objetivos. Esta versión ofrece la misma reactividad y sujeción neutra que tanto te gusta, pero con más comodidad en las zonas sensibles del pie, como el puente y los dedos. Da igual si estás en una maratón, haciendo sesiones de velocidad antes del amanecer o corriendo cuando te apetece",
         "price": "150 €",
         "img": "../src/assets/images/puma/puma1.jpg",
         "id": 6
     },
     {
-        "name": "Product 3",
-        "description": "description",
+        "name": "Product 7",
+        "description": "nike",
+        "fulldescription":"Con una pisada fluida para cualquier carrera, el modelo de Pegasus perfecto para ti vuelve para ayudarte a alcanzar tus objetivos. Esta versión ofrece la misma reactividad y sujeción neutra que tanto te gusta, pero con más comodidad en las zonas sensibles del pie, como el puente y los dedos. Da igual si estás en una maratón, haciendo sesiones de velocidad antes del amanecer o corriendo cuando te apetece",
         "price": "90 €",
         "img": "../src/assets/images/adidas/adidas1.jpg",
         "id": 7
     },
     {
-        "name": "Product 4",
+        "name": "Puma",
         "description": "description",
+        "fulldescription":"Con una pisada fluida para cualquier carrera, el modelo de Pegasus perfecto para ti vuelve para ayudarte a alcanzar tus objetivos. Esta versión ofrece la misma reactividad y sujeción neutra que tanto te gusta, pero con más comodidad en las zonas sensibles del pie, como el puente y los dedos. Da igual si estás en una maratón, haciendo sesiones de velocidad antes del amanecer o corriendo cuando te apetece",
+        "price": "70 €",
+        "img": "../src/assets/images/nike/nike2.jpg",
+        "id": 8
+    },
+    {
+        "name": "Product 9",
+        "description": "description",
+        "fulldescription":"Con una pisada fluida para cualquier carrera, el modelo de Pegasus perfecto para ti vuelve para ayudarte a alcanzar tus objetivos. Esta versión ofrece la misma reactividad y sujeción neutra que tanto te gusta, pero con más comodidad en las zonas sensibles del pie, como el puente y los dedos. Da igual si estás en una maratón, haciendo sesiones de velocidad antes del amanecer o corriendo cuando te apetece",
         "price": "70 €",
         "img": "../src/assets/images/nike/nike2.jpg",
         "id": 8

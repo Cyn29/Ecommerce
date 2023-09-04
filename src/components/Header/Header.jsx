@@ -31,7 +31,7 @@ function Header () {
                                 alt="Logout icon"
                                 fluid
                             />
-                            <Nav.Link href="#contact"><GrAddCircle/></Nav.Link>
+                            <Nav.Link href="#contact" ><GrAddCircle size={"2rem"}/></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
             </Container>
