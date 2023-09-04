@@ -2,9 +2,7 @@ import './App.css'
 import Header from './components/Header/Header';
 import Products from './components/Products/Products'
 import Footer from './components/Footer/Footer';
-import DataProvider from './components/Context/DataContext';
-
-
+import ProductDetail from './components/ProductDetail/ProductDetail';
 
 
 function App() {
@@ -13,7 +11,7 @@ function App() {
     
     <DataProvider>
     <Header />
-    <Products />
+    <ProductDetail/>
     <Footer />
     </DataProvider>
       )
