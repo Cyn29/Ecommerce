@@ -5,15 +5,15 @@ function ProductDetail() {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    // Solicitud a la API para obtener los datos del producto
+    // API request to fetch product data
     fetch('http://localhost:3000/productstu_API')
       .then((response) => response.json())
       .then((data) => setProduct(data))
-      .catch((error) => console.error('Error al obtener datos del producto', error));
+      .catch((error) => console.error('Error fetching product data', error));
   }, []);
 
   if (!product) {
-    return <div>Cargando...</div>;
+    return <div>Loading...</div>;
   }
 
   return (
@@ -26,13 +26,13 @@ function ProductDetail() {
                 <Col xs={12} md={6} className="h-75">
                   <Row>
                     <Col xs={6}>
-                      {/* Imagen de producto */}
+                      {/* Product image */}
                       <img src={product.img} alt="Product Missing" />
                     </Col>
                     <Col xs={6}>
-                      {/* Título de producto */}
+                      {/* Product title */}
                       <h2>{product.title}</h2>
-                      {/* Descripción de producto */}
+                      {/* Product description */}
                       <p>{product.fulldescription}</p>
                     </Col>
                   </Row>
@@ -40,16 +40,16 @@ function ProductDetail() {
                 <Col xs={12} md={3} className="h-25">
                   <Row>
                     <Col xs={4}>
-                      {/* Precio de producto */}
-                      <h3>Precio: €{product.price}</h3>
+                      {/* Product price */}
+                      <h3>Price: €{product.price}</h3>
                     </Col>
                     <Col xs={4}>
-                      {/* Botón de editar */}
-                      <Button variant="orange" className="text-dark">Editar</Button>
+                      {/* Edit button */}
+                      <Button variant="orange" className="text-dark">Edit</Button>
                     </Col>
                     <Col xs={4}>
-                      {/* Botón de eliminar */}
-                      <Button variant="orange" className="text-dark">Eliminar</Button>
+                      {/* Delete button */}
+                      <Button variant="orange" className="text-dark">Delete</Button>
                     </Col>
                   </Row>
                 </Col>
