@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Container, Row, Col, Button } from 'react-bootstrap';
+import { GrAddCircle } from 'react-icons/gr';
 
 function ProductDetail() {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    // solicitud a la API para obtener los datos del producto
+    // Solicitud a la API para obtener los datos del producto
     fetch('http://localhost:3000/productstu_API')
       .then((response) => response.json())
       .then((data) => setProduct(data))
@@ -28,32 +29,25 @@ function ProductDetail() {
                   {/* Imagen de producto */}
                   <img src={product.image_url} alt={product.title} />
                 </Col>
-                <Col xs={4}>
-                  {/* Precio de producto */}
-                  <h3>Precio: ${product.price}</h3>
-                </Col>
-                <Col xs={4}>
-                  {/* Botón de editar */}
-                  <Button variant="primary">Editar</Button>
-                </Col>
-                <Col xs={4}>
-                  {/* Botón de eliminar */}
-                  <Button variant="danger">Eliminar</Button>
-                </Col>
-              </Row>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={6}>
-          <Card className="w-100">
-            <Card.Header />
-            <Card.Body className="h-25">
-              <Row> 
                 <Col xs={6}>
                   {/* Título de producto */}
                   <h2>{product.title}</h2>
                   {/* Descripción de producto */}
-                  <p>{product.description}</p>
+                  <p>{product.fulldescription}</p>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={4}>
+                  {/* Precio de producto */}
+                  <h3>Precio: €{product.price}</h3>
+                </Col>
+                <Col xs={4}>
+                  {/* Botón de editar */}
+                  <Button variant="orange" className="text-dark">Editar</Button>
+                </Col>
+                <Col xs={4}>
+                  {/* Botón de eliminar */}
+                  <Button variant="orange" className="text-dark">Eliminar</Button>
                 </Col>
               </Row>
             </Card.Body>
@@ -64,4 +58,4 @@ function ProductDetail() {
   );
 }
 
-export default ProductDetail;
+export default ProductDetail; 
