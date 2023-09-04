@@ -4,6 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { Image } from "react-bootstrap";
 import logo from "../../assets/logo.jpg";
 import logouticon from "../../assets/icons/logout.png";
+import { GrAddCircle } from 'react-icons/gr';
 
 function Header () {
     return (
@@ -30,6 +31,7 @@ function Header () {
                                 alt="Logout icon"
                                 fluid
                             />
+                            <Nav.Link href="#contact"><GrAddCircle/></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
             </Container>
