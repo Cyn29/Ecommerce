@@ -1,17 +1,28 @@
 import { useContext, useState } from "react";
-import { dataContext } from "../Context/DataContext";
+import { DataContext } from "../Context/DataContext";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import EditIcon from "../../assets/icons/edit.png";
 import DeleteIcon from "../../assets/icons/delete.png";
+import { FaRegEdit } from 'react-icons/fa';
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
 
+import EditProductModal from './EditProductModal';
+
+
 const Products = () => {
-    const { data, setData } = useContext(dataContext);
+    const { data, setData } = useContext(DataContext);
     const [isDeleting, setIsDeleting] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [productIdToDelete, setProductIdToDelete] = useState(null);
+
+    const [editProduct, setEditProduct] = useState(null);
+    const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+
+    const handleEditProduct = (product) => {
+        setEditProduct(product);
+        setIsEditModalOpen(true);
+    };
 
     async function deleteProduct(id) {
         try {
@@ -33,6 +44,22 @@ const Products = () => {
         setProductIdToDelete(id);
     }
 
+
+    const handleSaveEdit = async (editedProduct) => {
+        try {
+            await axios.put(`http://localhost:3000/products/${editedProduct.id}`, editedProduct);
+
+            setData((prevData) =>
+                prevData.map((product) =>
+                    product.id === editedProduct.id ? editedProduct : product
+                )
+            );
+
+            setIsEditModalOpen(false);
+        } catch (error) {
+            console.error('Error al actualizar el producto:', error);
+        }
+    };
     return (
         <main className="p-3 mb-2 bg-dark text-black">
             <section className="card-columns">
@@ -52,13 +79,7 @@ const Products = () => {
                                 className="text-black bg-darkorange">
                                 Ver Producto
                             </Button>
-                            <Button variant="orange">
-                                <Card.Img
-                                    src={EditIcon}
-                                    style={{ width: "1rem" }}
-                                    alt="Editar"
-                                />
-                            </Button>
+                           <Button variant="orange" onClick={() => handleEditProduct(product)}><FaRegEdit color="black" size="1rem"/></Button>
                             <Button
                                 onClick={() => openDeleteModal(product.id)}
                                 variant="orange"
@@ -77,6 +98,13 @@ const Products = () => {
                     </Card>
                 ))}
             </section>
+            {isEditModalOpen && (
+                <EditProductModal
+                    product={editProduct}
+                    onClose={() => setIsEditModalOpen(false)}
+                    onSave={handleSaveEdit}
+                />
+            )}
             <Modal show={showModal} onHide={() => setShowModal(false)}>
                 <Modal.Header closeButton>
                     <Modal.Title>Confirm Delete</Modal.Title>
