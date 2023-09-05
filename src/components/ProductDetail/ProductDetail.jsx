@@ -1,15 +1,21 @@
 import { useEffect, useState } from 'react';
 import { Card, Container, Row, Col, Button } from 'react-bootstrap';
 
+
 function ProductDetail() {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    // API request to fetch product data
-    fetch('http://localhost:3000/productstu_API')
-      .then((response) => response.json())
-      .then((data) => setProduct(data))
-      .catch((error) => console.error('Error fetching product data', error));
+    // Simulación de carga de datos de un producto desde una API
+    setTimeout(() => {
+      const mockProduct = {
+        img: 'URL_IMAGEN_PRODUCTO',
+        title: 'Nombre del Producto',
+        fulldescription: 'Descripción detallada del producto...',
+        price: 100.0,
+      };
+      setProduct(mockProduct);
+    }, 2000); // Simulación de carga durante 2 segundos
   }, []);
 
   if (!product) {
@@ -17,47 +23,35 @@ function ProductDetail() {
   }
 
   return (
-    <Container fluid>
+    <Container fluid className="bg-black">
+      <Card className="justify-content-md-auto">
       <Row>
-        <Col md={12}>
-          <Card className="w-100">
-            <Card.Body>
-              <Row>
-                <Col xs={12} md={6} className="h-75">
-                  <Row>
-                    <Col xs={6}>
-                      {/* Product image */}
-                      <img src={product.img} alt="Product Missing" />
-                    </Col>
-                    <Col xs={6}>
-                      {/* Product title */}
-                      <h2>{product.title}</h2>
-                      {/* Product description */}
-                      <p>{product.fulldescription}</p>
-                    </Col>
-                  </Row>
-                </Col>
-                <Col xs={12} md={3} className="h-25">
-                  <Row>
-                    <Col xs={4}>
-                      {/* Product price */}
-                      <h3>Price: €{product.price}</h3>
-                    </Col>
-                    <Col xs={4}>
-                      {/* Edit button */}
-                      <Button variant="orange" className="text-dark">Edit</Button>
-                    </Col>
-                    <Col xs={4}>
-                      {/* Delete button */}
-                      <Button variant="orange" className="text-dark">Delete</Button>
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-            </Card.Body>
-          </Card>
+        <Col  sm={6} className="d-flex justify-content-center">
+          {/* Product Image */}
+          <img src={product.img} alt="Product" className="w-100 h-100 img-fluid"/>
+        </Col>
+        <Col sm={6}>
+          {/* Product Title */}
+          <h2 className="text-center" >{product.title}</h2>
+          {/* Product Description */}
+          <p className="text-center" >{product.fulldescription}</p>
         </Col>
       </Row>
+      <Row >
+      <Col sm={6}>
+          {/* Product price */}
+          <h3 className="text-center" >Price: €{product.price}</h3>
+        </Col>
+        <Col sm={3} className="d-flex justify-content-end">
+          {/* Edit button */}
+          <Button variant="orange" className="text-dark">Edit</Button>
+        </Col>
+        <Col sm={3} className="d-flex justify-content-start">
+          {/* Delete button */}
+          <Button variant="orange" className="text-dark">Delete</Button>
+        </Col>
+      </Row>
+      </Card>
     </Container>
   );
 }
