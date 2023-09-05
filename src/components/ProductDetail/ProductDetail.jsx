@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Card, Container, Row, Col, Button } from 'react-bootstrap';
-
+import './ProductDetail.css'
 
 function ProductDetail() {
   const [product, setProduct] = useState(null);
@@ -19,7 +19,7 @@ function ProductDetail() {
   }, []);
 
   if (!product) {
-    return <div>Loading...</div>;
+    return <div id="ring" >Loading...</div>;
   }
 
   return (
@@ -28,7 +28,7 @@ function ProductDetail() {
       <Row>
         <Col  sm={6} className="d-flex justify-content-center">
           {/* Product Image */}
-          <img src={product.img} alt="Product" className="w-100 h-100 img-fluid"/>
+          <img src={product.img} alt="Product" className="w-100 h-100 img-fluid mx-auto"/>
         </Col>
         <Col sm={6}>
           {/* Product Title */}
@@ -42,11 +42,11 @@ function ProductDetail() {
           {/* Product price */}
           <h3 className="text-center" >Price: €{product.price}</h3>
         </Col>
-        <Col sm={3} className="d-flex justify-content-end">
+        <Col sm={3} className="d-flex justify-content-center align-items-center">
           {/* Edit button */}
           <Button variant="orange" className="text-dark">Edit</Button>
         </Col>
-        <Col sm={3} className="d-flex justify-content-start">
+        <Col sm={3} className="d-flex justify-content-center align-items-center">
           {/* Delete button */}
           <Button variant="orange" className="text-dark">Delete</Button>
         </Col>
