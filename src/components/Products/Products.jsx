@@ -50,16 +50,16 @@ const Products = () => {
                             <Button
                                 variant="orange"
                                 className="text-black bg-darkorange">
-                                Ver Producto
+                                See Product
                             </Button>
-                            <Button variant="orange">
+                            <Button variant="orange" title="Edit Product">
                                 <Card.Img
                                     src={EditIcon}
                                     style={{ width: "1rem" }}
                                     alt="Editar"
                                 />
                             </Button>
-                            <Button
+                            <Button title="Delete Product"
                                 onClick={() => openDeleteModal(product.id)}
                                 variant="orange"
                                 disabled={isDeleting}>
