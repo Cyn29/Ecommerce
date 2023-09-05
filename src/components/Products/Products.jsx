@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import DeleteIcon from "../../assets/icons/delete.png";
 import { FaRegEdit } from 'react-icons/fa';
+import { AiFillDelete } from 'react-icons/ai';
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
 
@@ -73,7 +74,7 @@ const Products = () => {
                         <Card.Body>
                             <Card.Title>{product.name}</Card.Title>
                             <Card.Text>{product.description}</Card.Text>
-                            <Card.Text>{product.price}</Card.Text>
+                            <Card.Text>{product.price} €</Card.Text>
                             <Button
                                 variant="orange"
                                 className="text-black bg-darkorange">
