@@ -16,8 +16,15 @@ const DataProvider = ({ children }) => {
             });
     }, []);
 
+    const addProduct = async (newProduct) => {
+        const response = await axios.post("http://localhost:3000/products", newProduct);
+        setData([...data, response.data]);
+    };
+    
+    
+
     return (
-        <dataContext.Provider value={{ data, setData }}>
+        <dataContext.Provider value={{ data, addProduct, setData }}>   {/* en esta línea solo añado addProduct*/}
             {children}
         </dataContext.Provider>
     );
