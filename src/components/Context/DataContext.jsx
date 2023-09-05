@@ -1,7 +1,5 @@
 import axios from "axios";
 import { createContext, useState, useEffect } from "react";
-import PropTypes from 'prop-types';
-
 
 export const dataContext = createContext();
 
@@ -11,7 +9,7 @@ const DataProvider = ({ children }) => {
     useEffect(() => {
         axios("http://localhost:3000/products")
             .then((res) => {
-
+               
                 setData(res.data);
                 console.log(res.data);
 
@@ -19,14 +17,11 @@ const DataProvider = ({ children }) => {
     }, []);
 
     return (
-            <dataContext.Provider value={{ data }}>
-                {children}
-            </dataContext.Provider>
-        );
-    };
-    DataProvider.propTypes = {
-        children: PropTypes.node.isRequired,
-    };
+        <dataContext.Provider value={{ data, setData }}>
+            {children}
+        </dataContext.Provider>
+    );
+};
 
 export default DataProvider;
 
