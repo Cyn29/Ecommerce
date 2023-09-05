@@ -1,53 +1,57 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Card, Container, Row, Col, Button } from 'react-bootstrap';
-import { GrAddCircle } from 'react-icons/gr';
 
 function ProductDetail() {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    // Solicitud a la API para obtener los datos del producto
+    // API request to fetch product data
     fetch('http://localhost:3000/productstu_API')
       .then((response) => response.json())
       .then((data) => setProduct(data))
-      .catch((error) => console.error('Error al obtener datos del producto', error));
+      .catch((error) => console.error('Error fetching product data', error));
   }, []);
 
   if (!product) {
-    return <div>Cargando...</div>;
+    return <div>Loading...</div>;
   }
 
   return (
     <Container fluid>
       <Row>
-        <Col md={6}>
+        <Col md={12}>
           <Card className="w-100">
-            <Card.Header />
-            <Card.Body className="h-75">
+            <Card.Body>
               <Row>
-                <Col xs={6}>
-                  {/* Imagen de producto */}
-                  <img src={product.image_url} alt={product.title} />
+                <Col xs={12} md={6} className="h-75">
+                  <Row>
+                    <Col xs={6}>
+                      {/* Product image */}
+                      <img src={product.img} alt="Product Missing" />
+                    </Col>
+                    <Col xs={6}>
+                      {/* Product title */}
+                      <h2>{product.title}</h2>
+                      {/* Product description */}
+                      <p>{product.fulldescription}</p>
+                    </Col>
+                  </Row>
                 </Col>
-                <Col xs={6}>
-                  {/* Título de producto */}
-                  <h2>{product.title}</h2>
-                  {/* Descripción de producto */}
-                  <p>{product.fulldescription}</p>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={4}>
-                  {/* Precio de producto */}
-                  <h3>Precio: €{product.price}</h3>
-                </Col>
-                <Col xs={4}>
-                  {/* Botón de editar */}
-                  <Button variant="orange" className="text-dark">Editar</Button>
-                </Col>
-                <Col xs={4}>
-                  {/* Botón de eliminar */}
-                  <Button variant="orange" className="text-dark">Eliminar</Button>
+                <Col xs={12} md={3} className="h-25">
+                  <Row>
+                    <Col xs={4}>
+                      {/* Product price */}
+                      <h3>Price: €{product.price}</h3>
+                    </Col>
+                    <Col xs={4}>
+                      {/* Edit button */}
+                      <Button variant="orange" className="text-dark">Edit</Button>
+                    </Col>
+                    <Col xs={4}>
+                      {/* Delete button */}
+                      <Button variant="orange" className="text-dark">Delete</Button>
+                    </Col>
+                  </Row>
                 </Col>
               </Row>
             </Card.Body>
@@ -58,4 +62,4 @@ function ProductDetail() {
   );
 }
 
-export default ProductDetail; 
+export default ProductDetail;
