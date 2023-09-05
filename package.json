@@ -11,16 +11,12 @@
     "start": "json-server --watch ./Api/products.json"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
     "@fortawesome/fontawesome-free": "^6.4.2",
-    "@mui/material": "^5.14.7",
     "axios": "^1.5.0",
     "bootstrap": "^5.3.1",
     "json-server": "^0.17.3",
     "mdb-react-ui-kit": "^6.2.0",
-    "mdbreact": "^4.6.1",
-    "prop-types": "^15.8.1",
+    "mdbreact": "^5.2.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
     "react-bootstrap-icons": "^1.10.3",
