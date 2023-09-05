@@ -1,9 +1,9 @@
 import axios from "axios";
 import { createContext, useState, useEffect } from "react";
 
-export const dataContext = createContext();
+export const DataContext = createContext();
 
-const DataProvider = ({ children }) => {
+const DataProvider = ({ children }) => { 
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -17,9 +17,9 @@ const DataProvider = ({ children }) => {
     }, []);
 
     return (
-        <dataContext.Provider value={{ data, setData }}>
+        <DataContext.Provider value={{ data, setData }}>
             {children}
-        </dataContext.Provider>
+        </DataContext.Provider>
     );
 };
 

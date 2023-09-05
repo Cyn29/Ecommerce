@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { dataContext } from "../Context/DataContext";
+import { DataContext } from "../Context/DataContext";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import EditIcon from '../../assets/icons/edit.png';
@@ -7,7 +7,7 @@ import DeleteIcon from '../../assets/icons/delete.png';
 import axios from "axios";
 
 const Products = () => {
-  const { data, setData } = useContext(dataContext);
+  const { data, setData } = useContext(DataContext);
   const [isDeleting, setIsDeleting] = useState(false);
 
   async function deleteProduct(id) {
@@ -29,11 +29,7 @@ product.id
     <main className="p-3 mb-2 bg-dark text-black">
       <section className="card-columns">
         {
-data.map
-((product) => (
-          <Card key={
-product.id
-}>
+data.map((product) => ( <Card key={product.id}>
             <Card.Img
               variant="top"
               src={product.img}
