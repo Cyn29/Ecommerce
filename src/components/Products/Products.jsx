@@ -77,14 +77,14 @@ const Products = () => {
                             <Button
                                 variant="orange"
                                 className="text-black bg-darkorange">
-                                Ver Producto
+                                See Product
                             </Button>
                             <Button
                                 variant="orange"
                                 onClick={() => handleEditProduct(product)}>
                                 <FaRegEdit color="black" size="1rem" />
                             </Button>
-                            <Button
+                            <Button title="Delete Product"
                                 onClick={() => openDeleteModal(product.id)}
                                 variant="orange"
                                 disabled={isDeleting}>
