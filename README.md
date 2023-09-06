@@ -1,6 +1,6 @@
 # Project Description 📣
 
-At Your Feet, a marketplace that redefines the way we experience fashion and footwear. Our platform focuses on sneakers of all styles, making it easy to buy and sell new and/or second-hand products, creating a space where sustainability and style converge.
+A tus pies, a marketplace that redefines the way we experience fashion and footwear. Our platform focuses on sneakers of all styles, making it easy to buy and sell new and/or second-hand products, creating a space where sustainability and style converge.
 
 ## System Requirements 🔎
 
@@ -22,7 +22,7 @@ Make sure you have the following requirements installed in your development envi
 
   - Add React, React Bootstrap, and Mdb Bootstrap to your project (if not already done).
 
-  - Visit [react.dev](https://react.dev/), [react-bootstrap.netlify.app](https://react-bootstrap.netlify.app/), and [mdbbootstrap](https://mdbbootstrap.com/) for more comprehensive information.
+  - Visit [react.dev](https://react.dev/), [react-bootstrap.netlify.app](https://react-bootstrap.netlify.app/), and [mdbbootstrap](https://mdbbootstrap.com/) for more information.
 
 - `package.json` File: Ensure you have a valid `package.json` file at the root of your project. This file should contain information about dependencies and necessary scripts.
 
