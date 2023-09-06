@@ -84,7 +84,8 @@ const Products = () => {
                                 onClick={() => handleEditProduct(product)}>
                                 <FaRegEdit color="black" size="1rem" />
                             </Button>
-                            <Button title="Delete Product"
+                            <Button
+                                title="Delete Product"
                                 onClick={() => openDeleteModal(product.id)}
                                 variant="orange"
                                 disabled={isDeleting}>
@@ -116,7 +117,7 @@ const Products = () => {
                 <Modal.Body>Product will be deleted. Are you sure?</Modal.Body>
                 <Modal.Footer>
                     <Button
-                        variant="red text-white"
+                        variant="orange text-white"
                         onClick={() => deleteProduct(productIdToDelete)}
                         disabled={isDeleting}>
                         {isDeleting ? "Deleting..." : "Delete"}
