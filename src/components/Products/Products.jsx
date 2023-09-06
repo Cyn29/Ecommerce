@@ -60,7 +60,7 @@ const Products = () => {
         }
     };
     return (
-        <main className="p-3 mb-2 bg-dark text-black">
+        <main id="products-section" className="p-3 mb-2 bg-dark text-black">
             <section className="card-columns">
                 {data.map((product) => (
                     <Card key={product.id}>
