@@ -4,7 +4,6 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Image } from "react-bootstrap";
 import logo from "../../assets/logo.jpg"; // Asegúrate de tener este recurso en la ubicación especificada
-import logouticon from "../../assets/icons/logout.png"; // Asegúrate de tener este recurso en la ubicación especificada
 import AddProductModal from '../AddProductModal/AddProductModal';
 import { GrAddCircle } from 'react-icons/gr';
 import { GrLogout } from 'react-icons/gr';
@@ -16,7 +15,7 @@ function Header() {
 
   return (
     <>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg">
         <Container>
           <Navbar.Brand href="#home">
             <Image

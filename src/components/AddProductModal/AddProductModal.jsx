@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import { FaBeer, FaSave } from 'react-icons/fa';
 import { useState, useContext } from 'react';
-import { dataContext } from '../Context/DataContext';
+import { DataContext } from '../Context/DataContext';
 
 const AddProductModal = ({ show, handleClose }) => {
     const [imageBase64, setImageBase64] = useState(""); // 1
@@ -13,7 +13,7 @@ const AddProductModal = ({ show, handleClose }) => {
         img: null
     });
 
-    const { addProduct } = useContext(dataContext);
+    const { addProduct } = useContext(DataContext);
 
     const handleImageChange = (event) => {
         const file = event.target.files[0];
