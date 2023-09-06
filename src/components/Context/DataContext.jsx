@@ -1,7 +1,6 @@
 import axios from "axios";
 import { createContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
-
 export const DataContext = createContext();
 
 const DataProvider = ({ children }) => { 
@@ -21,8 +20,9 @@ const DataProvider = ({ children }) => {
         </DataContext.Provider>
     );
 };
-DataProvider.propTypes ={children: PropTypes.node};
-
+DataProvider.propTypes = {
+    children: PropTypes.node
+};
 export default DataProvider;
 
 
