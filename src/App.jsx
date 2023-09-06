@@ -4,16 +4,16 @@ import Products from './components/Products/Products'
 import Footer from './components/Footer/Footer';
 import ProductDetail from './components/ProductDetail/ProductDetail';
 import DataProvider from './components/Context/DataContext';
+import AddProductModal from './components/AddProductModal/AddProductModal'
 
 
 function App() {
 
   return (
-    
     <DataProvider>
     <Header />
-    <Products/>
-    <ProductDetail/>
+    <AddProductModal />
+    <Products />
     <Footer />
     </DataProvider>
       )
