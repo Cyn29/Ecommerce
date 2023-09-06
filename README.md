@@ -32,9 +32,9 @@ Make sure you have the following requirements installed in your development envi
 
 - React Testing: If you want to run tests on your project, make sure you have the appropriate tools installed.
 
-  - To run tests with React, you can use React Testing Library.
+  - To run tests with React, you can use [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/react/).
 
-  - Install React Testing Library as a development dependency: `npm install --save-dev @testing-library/dom`.
+- Install Jest and React Testing Library as development dependencies: `npm install --save-dev jest @testing-library/react @testing-library/jest-dom`
 
 Once you've confirmed that you meet these requirements, you can proceed to set up and run the "At Your Feet" project smoothly. Make sure to keep this section updated as our project evolves.
 
@@ -52,6 +52,7 @@ Once you've confirmed that you meet these requirements, you can proceed to set u
 **Testing:**
 
 - React Testing Library
+- Jest
 
 **Project Management Software:**
 
