@@ -6,7 +6,7 @@ import DeleteIcon from "../../assets/icons/delete.png";
 import { FaRegEdit } from "react-icons/fa";
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
-import EditProductModal from "./EditProductModal";
+import EditProductModal from "../EditProductModal.jsx/EditProductModal";
 
 const Products = () => {
     const { data, setData } = useContext(DataContext);
