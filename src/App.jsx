@@ -11,7 +11,6 @@ import AddProductModal from './components/AddProductModal/AddProductModal'
 function App() {
 
   return (
-    
     <DataProvider>
     <Header />
     <AddProductModal />

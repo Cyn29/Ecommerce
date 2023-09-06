@@ -13,7 +13,6 @@ const Products = () => {
     const [isDeleting, setIsDeleting] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [productIdToDelete, setProductIdToDelete] = useState(null);
-
     const [editProduct, setEditProduct] = useState(null);
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
@@ -66,8 +65,10 @@ const Products = () => {
                 {data.map((product) => (
                     <Card key={product.id}>
                         <Card.Img
+                            aria-label="product-image"
                             variant="top"
                             src={product.img}
+                            alt="Product image"
                             style={{ width: "100%", height: "20rem" }}
                         />
                         <Card.Body>
@@ -79,12 +80,13 @@ const Products = () => {
                                 className="text-black bg-darkorange">
                                 See Product
                             </Button>
-                            <Button
+                            <Button title="Edit Product"
                                 variant="orange"
                                 onClick={() => handleEditProduct(product)}>
                                 <FaRegEdit color="black" size="1rem" />
                             </Button>
-                            <Button title="Delete Product"
+                            <Button
+                                title="Delete Product"
                                 onClick={() => openDeleteModal(product.id)}
                                 variant="orange"
                                 disabled={isDeleting}>
@@ -116,7 +118,7 @@ const Products = () => {
                 <Modal.Body>Product will be deleted. Are you sure?</Modal.Body>
                 <Modal.Footer>
                     <Button
-                        variant="red text-white"
+                        variant="orange text-white"
                         onClick={() => deleteProduct(productIdToDelete)}
                         disabled={isDeleting}>
                         {isDeleting ? "Deleting..." : "Delete"}
