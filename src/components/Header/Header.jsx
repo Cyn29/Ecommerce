@@ -15,7 +15,7 @@ function Header() {
 
     return (
         <>
-            <Navbar expand="lg">
+            <Navbar expand="lg" sticky="top " bg="white">
                 <Container>
                     <Navbar.Brand href="#home">
                         <Image
