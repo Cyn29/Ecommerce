@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { DataContext } from "../Context/DataContext";
+
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import DeleteIcon from "../../assets/icons/delete.png";
@@ -133,3 +134,4 @@ const Products = () => {
 };
 
 export default Products;
+
