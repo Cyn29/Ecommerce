@@ -1,13 +1,14 @@
+import React from "react";
 import {
-    MDBFooter,
-    MDBContainer,
-    MDBIcon,
-    MDBBtn
-  } from 'mdb-react-ui-kit';
+  MDBFooter,
+  MDBContainer,
+  MDBIcon,
+  MDBBtn
+} from 'mdb-react-ui-kit';
 
 function Footer() {
   return (
-    <MDBFooter className='bg-dark text-center text-white'>
+    <MDBFooter id="contact-footer" className='bg-dark text-center text-white'>
       <MDBContainer className='p-4 pb-0'>
         <section className='mb-4'>
           <MDBBtn outline color="light" floating className='m-1' href='#!' role='button' data-testid='facebook-icon'>
@@ -34,11 +35,11 @@ function Footer() {
       <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
         © 2023 Copyright:<br/>
         <a className='text-white' href='#!'>
-            www.atuspies.com
+          www.atuspies.com
         </a>
       </div>
     </MDBFooter>
   );
 }
 
-export default Footer
+export default Footer;
