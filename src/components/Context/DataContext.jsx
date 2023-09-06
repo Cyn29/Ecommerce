@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createContext, useState, useEffect } from "react";
-
-export const dataContext = createContext();
+import PropTypes from "prop-types";
+export const DataContext = createContext();
 
 const DataProvider = ({ children }) => {
     const [data, setData] = useState([]);
@@ -24,11 +24,13 @@ const DataProvider = ({ children }) => {
     
 
     return (
-        <dataContext.Provider value={{ data, addProduct, setData }}>   {/* en esta línea solo añado addProduct*/}
+        <DataContext.Provider value={{ data, addProduct, setData }}>   {/* en esta línea solo añado addProduct*/}
             {children}
-        </dataContext.Provider>
+        </DataContext.Provider>
     );
 };
-
+DataProvider.propTypes = {
+    children: PropTypes.node
+};
 export default DataProvider;
 
