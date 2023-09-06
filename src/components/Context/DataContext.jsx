@@ -7,13 +7,10 @@ const DataProvider = ({ children }) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios("http://localhost:3000/products")
-            .then((res) => {
-               
-                setData(res.data);
-                console.log(res.data);
-
-            });
+        axios("http://localhost:3000/products").then((res) => {
+            setData(res.data);
+            console.log(res.data);
+        });
     }, []);
 
     const addProduct = async (newProduct) => {
@@ -30,7 +27,6 @@ const DataProvider = ({ children }) => {
     );
 };
 DataProvider.propTypes = {
-    children: PropTypes.node
+    children: PropTypes.node,
 };
 export default DataProvider;
-
