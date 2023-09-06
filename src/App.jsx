@@ -13,6 +13,7 @@ function App() {
     <DataProvider>
     <Header />
     <AddProductModal />
+    < ProductDetail/>
     <Products />
     <Footer />
     </DataProvider>
