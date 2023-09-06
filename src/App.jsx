@@ -10,7 +10,6 @@ import DataProvider from './components/Context/DataContext';
 function App() {
 
   return (
-    
     <DataProvider>
     <Header />
     <Products />
