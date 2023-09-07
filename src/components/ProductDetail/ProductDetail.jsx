@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowLeft,
-  faCirclePlus,
   faPenToSquare,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
@@ -64,34 +63,9 @@ const ProductDetail = () => {
         <Row className="align-items-center" style={{ flex: 2 }}>
           <Col sm={6}>
             <h3 className="text-center" style={{ color: "#DF6A45", fontWeight: 'bold' }}>Price: {product.price} €</h3>
-            <h3
-              className="text-center"
-              style={{ color: "#f0a202", fontWeight: "bold" }}
-            >
-              Price: {product.price} €
-            </h3>
           </Col>
           <Col
-            sm={2}
-            className="d-flex justify-content-center align-items-center"
-          >
-            {/* Upload Btn */}
-            <Button
-              title="Add product"
-              variant="outline-transparent"
-              className="w-100 h-100 p-0 mb-3"
-              style={{ boxShadow: "none" }}
-            >
-              <FontAwesomeIcon
-                icon={faCirclePlus}
-                size="2xl"
-                style={{ color: "#DF6A45" }}
-              />
-            </Button>
-          </Col>
-
-          <Col
-            sm={2}
+            sm={3}
             className="d-flex justify-content-center align-items-center"
           >
             {/* Edit Btn */}
@@ -110,7 +84,7 @@ const ProductDetail = () => {
           </Col>
 
           <Col
-            sm={2}
+            sm={3}
             className="d-flex justify-content-center align-items-center"
           >
             {/* Delete Btn */}
