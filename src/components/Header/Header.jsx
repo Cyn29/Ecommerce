@@ -35,6 +35,7 @@ function Header() {
                   icon={faCirclePlus}
                   size="2xl"
                   style={{ color: "#DF6A45" }}
+                  onClick={handleShow}
                 />
               </Nav.Link>
               <Nav.Link href="#products" className="font-weight-bold">Products</Nav.Link>

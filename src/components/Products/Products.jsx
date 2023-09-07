@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import { DataContext } from "../Context/DataContext";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import DeleteIcon from "../../assets/icons/delete.png";
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
 import EditProductModal from "../EditProductModal.jsx/EditProductModal";
@@ -66,8 +65,8 @@ const Products = () => {
     }
   };
   return (
-    <main className="p-3 mb-2 bg-dark text-black">
-<section className="card-columns">
+    <main id="products" className="p-3 mb-2 bg-dark text-black">
+<section id="home" className="card-columns">
   {data.map((product) => (
     <Card key={product.id}>
       <Card.Img
