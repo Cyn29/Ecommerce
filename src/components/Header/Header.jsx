@@ -2,12 +2,11 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Image } from "react-bootstrap";
-import logo from "../../assets/logo.jpg"; // Asegúrate de tener este recurso en la ubicación especificada
+import logo from "../../assets/logo.jpg"; 
 import AddProductModal from "../AddProductModal/AddProductModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlus, faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 function Header() {
   const [showModal, setShowModal] = useState(false);
