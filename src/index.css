@@ -1,0 +1,26 @@
+:root {
+    --black-color: #000;
+    --white-color: #fff;
+    --blue-color: #3fbcb5;
+    --orange-color: #df6a45;
+    --red-color: #c63131;
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-padding-top: 200px;
+}
+
+
