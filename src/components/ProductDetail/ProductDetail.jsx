@@ -19,11 +19,11 @@ const ProductDetail = () => {
   return (
     <Container className="bg-black d-flex align-items-stretch justify-content-center" style={{ minHeight: "100vh", minWidth: "100vw" }}>
       <Card>
-        {/* Exit Btn */}
+        {/*Back Btn */}
         <Row className="align-self-end">
           <Link to="/">
             <Button
-              title="Back"
+              title="Back to home"
               variant="outline-transparent"
               alt="exit"
               className="w-100"
@@ -60,7 +60,7 @@ const ProductDetail = () => {
           <Col sm={2} className="d-flex justify-content-center align-items-center">
             {/* Upload Btn */}
             <Button
-              title="Upload"
+              title="Add product"
               variant="outline-transparent"
               className="w-100 h-100 p-0 mb-3"
               style={{ boxShadow: "none" }}
@@ -76,7 +76,7 @@ const ProductDetail = () => {
           <Col sm={2} className="d-flex justify-content-center align-items-center">
             {/* Edit Btn */}
             <Button
-              title="Edit"
+              title="Edit product"
               variant="outline-transparent"
               className="w-100 h-100 p-0 mb-3"
               style={{ boxShadow: "none" }}
@@ -92,7 +92,7 @@ const ProductDetail = () => {
           <Col sm={2} className="d-flex justify-content-center align-items-center">
             {/* Delete Btn */}
             <Button
-              title="Delete"
+              title="Delete product"
               variant="outline-transparent"
               className="w-100 h-100 p-0 mb-3"
               style={{ boxShadow: "none" }}
