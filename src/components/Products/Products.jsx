@@ -8,7 +8,13 @@ import Modal from "react-bootstrap/Modal";
 import EditProductModal from "../EditProductModal.jsx/EditProductModal";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faPenToSquare,faTrash  } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEye,
+  faPenToSquare,
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const Products = () => {
   const { data, setData } = useContext(DataContext);
@@ -61,70 +67,80 @@ const Products = () => {
   };
   return (
     <main className="p-3 mb-2 bg-dark text-black">
-      <section className="card-columns">
-        {data.map((product) => (
-          <Card key={product.id}>
-            <Card.Img
-              aria-label="product-image"
-              variant="top"
-              src={product.img}
-              alt="Product image"
-              style={{ width: "100%", height: "20rem" }}
-            />
-            <Card.Body>
-              <Card.Title>{product.name}</Card.Title>
-              <Card.Text>{product.description}</Card.Text>
-              <Card.Text>{product.price} €</Card.Text>
-              <Link to={`/productdetail/${product.id}`}>
-                {/*Edit btn*/}
-                <Button 
-                title="Edit product"
-                variant="outline-transparent"
-                className="w-100 h-100 p-0 mb-3"
-                style={{ boxShadow: "none" }}>
-                  <FontAwesomeIcon
-                    icon={faEye}
-                    size="2xl"
-                    style={{ color: "#f0a202" }}
-                  />
-                </Button>
-              </Link>
-              {/*edit btn*/}
+<section className="card-columns">
+  {data.map((product) => (
+    <Card key={product.id}>
+      <Card.Img
+        aria-label="product-image"
+        variant="top"
+        src={product.img}
+        alt="Product image"
+        style={{ width: "100%", height: "20rem" }}
+      />
+      <Card.Body>
+        <Card.Title>{product.name}</Card.Title>
+        <Card.Text>{product.description}</Card.Text>
+        <Card.Text>{product.price} €</Card.Text>
+
+     
+        <Row className="justify-content-between align-items-center">
+          <Col xs="auto">
+            <Link to={`/productdetail/${product.id}`}>
               <Button
-                title="Edit product"
+                title="View product"
                 variant="outline-transparent"
-                className="w-100 h-100 p-0 mb-3"
+                className="p-0 mb-3"
                 style={{ boxShadow: "none" }}
               >
                 <FontAwesomeIcon
-                  icon={faPenToSquare}
+                  icon={faEye}
                   size="2xl"
                   style={{ color: "#f0a202" }}
                 />
               </Button>
+            </Link>
+          </Col>
 
-              {/*Delete btn*/}
-              <Button
-                title="Delete Product"
-                onClick={() => openDeleteModal(product.id)}
-                variant="outline-transparent"
-                style={{ boxShadow: "none" }}
-                disabled={isDeleting}
-              >
-                {isDeleting ? (
-                  "Deleting..."
-                ) : (
-                <FontAwesomeIcon
-                icon={faTrash}
+          <Col xs="auto">
+            <Button
+              title="Edit product"
+              variant="outline-transparent"
+              className="p-0 mb-3"
+              style={{ boxShadow: "none" }}
+            >
+              <FontAwesomeIcon
+                icon={faPenToSquare}
                 size="2xl"
                 style={{ color: "#f0a202" }}
               />
-                )}
-              </Button>
-            </Card.Body>
-          </Card>
-        ))}
-      </section>
+            </Button>
+          </Col>
+
+          <Col xs="auto">
+            <Button
+              title="Delete Product"
+              onClick={() => openDeleteModal(product.id)}
+              variant="outline-transparent"
+              style={{ boxShadow: "none" }}
+              disabled={isDeleting}
+            >
+              {isDeleting ? (
+                "Deleting..."
+              ) : (
+                <FontAwesomeIcon
+                  icon={faTrash}
+                  size="2xl"
+                  style={{ color: "#f0a202" }}
+                />
+              )}
+            </Button>
+          </Col>
+        </Row>
+      </Card.Body>
+    </Card>
+  ))}
+</section>
+
       {isEditModalOpen && (
         <EditProductModal
           product={editProduct}
