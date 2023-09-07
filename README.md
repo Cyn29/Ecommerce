@@ -64,6 +64,15 @@ Once you've confirmed that you meet these requirements, you can proceed to set u
 
 - Figma: https://www.figma.com/file/UjNGb5fcCajhBhIlJk8a7C/Ecomerce?type=design&node-id=20-3&mode=design&t=Tm11Kmp0SG4iTFcw-0
 
+## Library 📚
+
+- Axios
+- React-Bootstrap
+- Mdb-Bootstrap
+- Mdb React-Ui-Kit
+- React Router Dom
+- React Icons
+- Testing Library/Jest Dom
 
 ## Authors 👥 
 
