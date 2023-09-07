@@ -16,7 +16,7 @@ const product = data.find((item) => item.id === parseInt(productId));
 
 
 if (!product) {
-return <p>Producto no encontrado.</p>;
+return <p>Product did not finded.</p>;
 }
 
 
@@ -60,8 +60,8 @@ style={{ margin: "3px" }}> <GrAddCircle size={"1.5em"}/></Button>
 <Col sm={2} className="d-flex justify-content-center align-items-center">
 <Button
 variant="orange"
-className="w-100 h-100 p-0 mb-3"
 style={{ margin: "3px" }}
+className="w-100 h-100 p-0 mb-3"
 >
 <FaRegEdit color="black" size={"1.5em"}/></Button>
 </Col>

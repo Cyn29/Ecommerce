@@ -5,7 +5,8 @@ import Footer from './components/Footer/Footer';
 import DataProvider from './components/Context/DataContext';
 import AddProductModal from './components/AddProductModal/AddProductModal';
 import ProductDetail from '../src/components/ProductDetail/ProductDetail';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom/dist';
+
 
 
 const router = createBrowserRouter([
