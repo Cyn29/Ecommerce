@@ -63,14 +63,6 @@
       "price": "70",
       "img": "../src/assets/images/nike/nike8.jpg",
       "id": 8
-    },
-    {
-      "name": "NIKE Dunk low",
-      "description": "asdfasdfasdfasdf",
-      "fulldescription": "Con una pisada fluida para cualquier carrera, el modelo de Pegasus perfecto para ti vuelve para ayudarte a alcanzar tus objetivos. Esta versión ofrece la misma reactividad y sujeción neutra que tanto te gusta, pero con más comodidad en las zonas sensibles del pie, como el puente y los dedos. Da igual si estás en una maratón, haciendo sesiones de velocidad antes del amanecer o corriendo cuando te apetece",
-      "price": "70",
-      "img": "../src/assets/images/nike/nike10.jpg",
-      "id": 9
     }
   ]
 }

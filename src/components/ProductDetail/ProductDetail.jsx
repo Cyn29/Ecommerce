@@ -2,86 +2,112 @@ import { useContext } from "react";
 import { DataContext } from "../Context/DataContext";
 import { useParams } from "react-router-dom";
 import { Container, Card, Row, Col } from "react-bootstrap";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import DeleteIcon from "../../assets/icons/delete.png";
-import { GrAddCircle } from "react-icons/gr";
-import { FaRegEdit } from "react-icons/fa";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faCirclePlus, faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const ProductDetail = () => {
-const { data } = useContext(DataContext);
-const { productId } = useParams();
-const product = data.find((item) => item.id === parseInt(productId));
+  const { data } = useContext(DataContext);
+  const { productId } = useParams();
+  const product = data.find((item) => item.id === parseInt(productId));
 
+  if (!product) {
+    return;
+  }
 
-if (!product) {
-return <p>Product did not finded.</p>;
-}
+  return (
+    <Container className="bg-black d-flex align-items-stretch justify-content-center" style={{ minHeight: "100vh" }}>
+      <Card>
+        {/* Exit Btn */}
+        <Row className="align-self-end">
+          <Link to="/">
+            <Button
+              title="Back"
+              variant="outline-transparent"
+              alt="exit"
+              className="w-100"
+              style={{ boxShadow: "none" }}
+            >
+              <FontAwesomeIcon
+                icon={faArrowLeft}
+                size="2xl"
+                style={{ color: "#f0a202" }}
+              />
+            </Button>
+          </Link>
+        </Row>
+        <Row style={{ flex: 6, marginTop: "20px" }}>
+          <Col sm={6} className="d-flex justify-content-center">
+            <img
+              src={product.img}
+              alt={product.name}
+              className="w-100 h-100 img-fluid mx-auto"
+              style={{ maxHeight: "90vh", marginTop: "1em", marginLeft: "1em" }}
+            />
+          </Col>
+          <Col sm={6} className="d-flex flex-column">
+            <h2 className="text-center">{product.name}</h2>
+            <p className="align-self-center">{product.fulldescription}</p>
+          </Col>
+        </Row>
 
+        {/* Price and Buttons */}
+        <Row className="align-items-center" style={{ flex: 2 }}>
+          <Col sm={6}>
+            <h3 className="text-center" style={{ color: "#f0a202", fontWeight: 'bold' }}>Price: {product.price} €</h3>
+          </Col>
+          <Col sm={2} className="d-flex justify-content-center align-items-center">
+            {/* Upload Btn */}
+            <Button
+              title="Upload"
+              variant="outline-transparent"
+              className="w-100 h-100 p-0 mb-3"
+              style={{ boxShadow: "none" }}
+            >
+              <FontAwesomeIcon
+                icon={faCirclePlus}
+                size="2xl"
+                style={{ color: "#f0a202" }}
+              />
+            </Button>
+          </Col>
 
-return (
-<Container fluid className="bg-black">
-<Card>
-<Row sm={1} className="align-self-end h-10">
-<Link to="/"><Button
-variant="orange"
-alt="exit"
-className="hn-90">
-Return</Button></Link>
-</Row>
-<Row>
-<Col sm={6} className="d-flex justify-content-center">
-<img src={product.img} alt={product.name} className="w-90 h-60 img-fluid mx-auto" style={{ height: "90vh", marginTop: "1em", marginLeft: "1em" }}/>
-</Col>
-<Col sm={6}>
+          <Col sm={2} className="d-flex justify-content-center align-items-center">
+            {/* Edit Btn */}
+            <Button
+              title="Edit"
+              variant="outline-transparent"
+              className="w-100 h-100 p-0 mb-3"
+              style={{ boxShadow: "none" }}
+            >
+              <FontAwesomeIcon
+                icon={faPenToSquare}
+                size="2xl"
+                style={{ color: "#f0a202" }}
+              />
+            </Button>
+          </Col>
 
-<Col sm={6} className="w-90 h-60 img-fluid mx-auto">
-<h2 className="text-center">{product.name}</h2>
-<p className="align-content-center">{product.fulldescription}</p>
-</Col>
-
-
-
-
-</Col>
-</Row>
-<Row>
-<Col sm={6}>
-<h3 className="text-center">Price: {product.price} €</h3>
-</Col>
-<Col sm={2} className="d-flex justify-content-center align-items-center">
-<Button
-variant="orange"
-className="w-100 h-100 p-0 mb-3"
-style={{ margin: "3px" }}> <GrAddCircle size={"1.5em"}/></Button>
-
-</Col>
-<Col sm={2} className="d-flex justify-content-center align-items-center">
-<Button
-variant="orange"
-style={{ margin: "3px" }}
-className="w-100 h-100 p-0 mb-3"
->
-<FaRegEdit color="black" size={"1.5em"}/></Button>
-</Col>
-<Col sm={2} className="d-flex justify-content-center align-items-center">
-
-<Button
-variant="orange"
-className="w-100 h-100 p-0 mb-3"
-style={{ margin: "3px" }} >
-<img src={DeleteIcon} style={{ width: "1.5rem" }} alt="Delete" />
-</Button>
-</Col>
-
-</Row>
-
-</Card>
-</Container>
-);
+          <Col sm={2} className="d-flex justify-content-center align-items-center">
+            {/* Delete Btn */}
+            <Button
+              title="Delete"
+              variant="outline-transparent"
+              className="w-100 h-100 p-0 mb-3"
+              style={{ boxShadow: "none" }}
+            >
+              <FontAwesomeIcon
+                icon={faTrash}
+                size="2xl"
+                style={{ color: "#f0a202" }}
+              />
+            </Button>
+          </Col>
+        </Row>
+      </Card>
+    </Container>
+  );
 };
 
-
 export default ProductDetail;
-

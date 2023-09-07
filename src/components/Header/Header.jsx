@@ -36,7 +36,7 @@ function Header() {
                 <Nav.Link title="Add product">
                     <GrAddCircle onClick={handleShow} size={"2rem"} />
                 </Nav.Link>
-                <Nav.Link >Products</Nav.Link>
+                <Nav.Link>Products</Nav.Link>
 
                 <Nav.Link>Contact</Nav.Link>
                 <Nav.Link title="Logout">
