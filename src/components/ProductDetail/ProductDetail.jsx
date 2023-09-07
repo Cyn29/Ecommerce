@@ -47,7 +47,7 @@ const ProductDetail = () => {
             />
           </Col>
           <Col sm={6} className="d-flex flex-column">
-            <h2 className="text-center">{product.name}</h2>
+            <h2 className="text-center" style={{ color: "#f0a202", fontWeight: 'bold' }}>{product.name}</h2>
             <p className="align-self-center">{product.fulldescription}</p>
           </Col>
         </Row>

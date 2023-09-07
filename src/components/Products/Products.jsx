@@ -76,11 +76,8 @@ const Products = () => {
                             <Card.Title>{product.name}</Card.Title>
                             <Card.Text>{product.description}</Card.Text>
                             <Card.Text>{product.price} €</Card.Text>
-                            <Button
-                                variant="orange"
-                                className="text-black bg-darkorange">
-                                See Product
-                            </Button>
+                            <Link to={`/productdetail/${product.id}`}>
+                            <Button variant="orange" className="text-black bg-darkorange">See product</Button></Link>
                             <Button title="Edit Product"
                                 variant="orange"
                                 onClick={() => handleEditProduct(product)}>
