@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -7,6 +6,9 @@ import logo from "../../assets/logo.jpg"; // Asegúrate de tener este recurso en
 import AddProductModal from "../AddProductModal/AddProductModal";
 import { GrAddCircle } from "react-icons/gr";
 import { GrLogout } from "react-icons/gr";
+import { useState } from 'react';
+import { Link } from "react-router-dom";
+
 
 function Header() {
     const [showModal, setShowModal] = useState(false);
@@ -16,7 +18,7 @@ function Header() {
     return (
         <>
             <Navbar expand="lg" sticky="top " bg="white">
-                <Container >
+                <Container>
                     <Navbar.Brand href="#home">
                         <Image
                             width="25%"
