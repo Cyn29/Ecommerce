@@ -60,9 +60,10 @@ Once you've confirmed that you meet these requirements, you can proceed to set u
 
 ## Links 🔗 
 
-- Jira: https://cyn2993.atlassian.net/jira/software/projects/EC/boards/5
+ [![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/file/UjNGb5fcCajhBhIlJk8a7C/Ecomerce?type=design&node-id=20-3&mode=design&t=Tm11Kmp0SG4iTFcw-0)
+ [![Jira](https://cdn.iconscout.com/icon/free/png-512/free-jira-2296055-1912014.png?f=avif&w=256)](https://cyn2993.atlassian.net/jira/software/projects/EC/boards/5)
+  
 
-- Figma: https://www.figma.com/file/UjNGb5fcCajhBhIlJk8a7C/Ecomerce?type=design&node-id=20-3&mode=design&t=Tm11Kmp0SG4iTFcw-0
 
 ## Library 📚
 
