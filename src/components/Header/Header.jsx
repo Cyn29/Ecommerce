@@ -17,36 +17,32 @@ function Header() {
 
     return (
         <>
-            <Navbar expand="lg" sticky="top" bg="white">
-    <Container>
-        <Navbar.Brand>
-            <Link to={`/`}>
-                <Image
-                    width="25%"
-                    height="20%"
-                    src={logo}
-                    alt="Image of logotype"
-                    fluid
-                />
-            </Link>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="justify-content-end ml-auto">
-                <Nav.Link title="Add product">
-                    <GrAddCircle onClick={handleShow} size={"2rem"} />
-                </Nav.Link>
-                <Nav.Link>Products</Nav.Link>
-
-                <Nav.Link>Contact</Nav.Link>
-                <Nav.Link title="Logout">
-                    <GrLogout size={"2rem"} />
-                </Nav.Link>
-            </Nav>
-        </Navbar.Collapse>
-    </Container>
-</Navbar>
-
+            <Navbar expand="lg" sticky="top " bg="white">
+                <Container>
+                    <Navbar.Brand href="#home">
+                        <Image
+                            width="25%"
+                            height="20%"
+                            src={logo}
+                            alt="Image of logotype"
+                            fluid
+                        />
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="justify-content-end ml-auto">
+                            <Nav.Link title="Add product">
+                                <GrAddCircle onClick={handleShow} size={"2rem"} />
+                            </Nav.Link>
+                            <Nav.Link href="#products">Products</Nav.Link>
+                            <Nav.Link href="#contact">Contact</Nav.Link>
+                            <Nav.Link title="Logout">
+                                <GrLogout size={"2rem"} />
+                            </Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
             <AddProductModal show={showModal} handleClose={handleClose} />
         </>
     );

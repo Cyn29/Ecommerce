@@ -1,7 +1,7 @@
 
 import Header from './components/Header/Header';
-import Products from './components/Products/Products';
-import Footer from './components/Footer/Footer';
+import Products from './components/Products/Products'
+import Contact from './components/Contact/Contact'
 import DataProvider from './components/Context/DataContext';
 import AddProductModal from './components/AddProductModal/AddProductModal';
 import ProductDetail from '../src/components/ProductDetail/ProductDetail';
@@ -35,11 +35,16 @@ element: (
 
 
 function App() {
-return (
-<DataProvider>
-<RouterProvider router={router} />
-</DataProvider>
-);
+
+  return (
+    
+    <DataProvider>
+    <Header />
+    <AddProductModal />
+    <Products />
+    <Contact />
+    </DataProvider>
+      )
 }
 
 

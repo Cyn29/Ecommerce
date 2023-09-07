@@ -17,7 +17,7 @@ const ProductDetail = () => {
   }
 
   return (
-    <Container className="bg-black d-flex align-items-stretch justify-content-center" style={{ minHeight: "100vh" }}>
+    <Container className="bg-black d-flex align-items-stretch justify-content-center" style={{ minHeight: "100vh", minWidth: "100vw" }}>
       <Card>
         {/* Exit Btn */}
         <Row className="align-self-end">
