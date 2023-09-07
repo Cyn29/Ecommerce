@@ -5,7 +5,12 @@ import { Container, Card, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faCirclePlus, faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowLeft,
+  faCirclePlus,
+  faPenToSquare,
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
 
 const ProductDetail = () => {
   const { data } = useContext(DataContext);
@@ -17,7 +22,10 @@ const ProductDetail = () => {
   }
 
   return (
-    <Container className="bg-black d-flex align-items-stretch justify-content-center" style={{ minHeight: "100vh", minWidth: "100vw" }}>
+    <Container
+      className="bg-black d-flex align-items-stretch justify-content-center"
+      style={{ minHeight: "100vh", minWidth: "100vw" }}
+    >
       <Card>
         {/*Back Btn */}
         <Row className="align-self-end">
@@ -56,8 +64,17 @@ const ProductDetail = () => {
         <Row className="align-items-center" style={{ flex: 2 }}>
           <Col sm={6}>
             <h3 className="text-center" style={{ color: "#DF6A45", fontWeight: 'bold' }}>Price: {product.price} €</h3>
+            <h3
+              className="text-center"
+              style={{ color: "#f0a202", fontWeight: "bold" }}
+            >
+              Price: {product.price} €
+            </h3>
           </Col>
-          <Col sm={2} className="d-flex justify-content-center align-items-center">
+          <Col
+            sm={2}
+            className="d-flex justify-content-center align-items-center"
+          >
             {/* Upload Btn */}
             <Button
               title="Add product"
@@ -73,7 +90,10 @@ const ProductDetail = () => {
             </Button>
           </Col>
 
-          <Col sm={2} className="d-flex justify-content-center align-items-center">
+          <Col
+            sm={2}
+            className="d-flex justify-content-center align-items-center"
+          >
             {/* Edit Btn */}
             <Button
               title="Edit product"
@@ -89,7 +109,10 @@ const ProductDetail = () => {
             </Button>
           </Col>
 
-          <Col sm={2} className="d-flex justify-content-center align-items-center">
+          <Col
+            sm={2}
+            className="d-flex justify-content-center align-items-center"
+          >
             {/* Delete Btn */}
             <Button
               title="Delete product"
