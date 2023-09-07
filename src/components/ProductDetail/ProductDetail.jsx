@@ -100,7 +100,7 @@ const ProductDetail = () => {
               Price: {product.price} €
             </h3>
           </Col>
-          <Col sm={2} className="d-flex justify-content-center align-items-center">
+          <Col sm={6} className="d-flex justify-content-center align-items-center">
             <Button
               title="Edit product"
               variant="outline-transparent"
@@ -116,26 +116,12 @@ const ProductDetail = () => {
             </Button>
           </Col>
 
-          <Col sm={2} className="d-flex justify-content-center align-items-center">
-            <Button
-              title="Delete product"
-              variant="outline-transparent"
-              className="w-100 h-100 p-0 mb-3"
-              style={{ boxShadow: "none" }}
-            >
-              <FontAwesomeIcon
-                icon={faTrash}
-                size="2xl"
-                style={{ color: "#DF6A45" }}
-              />
-            </Button>
-          </Col>
         </Row>
       </Card>
 
       <Modal show={isModalOpen} onHide={toggleModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Edit Full Description</Modal.Title>
+          <Modal.Title>Description</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <textarea
@@ -146,11 +132,12 @@ const ProductDetail = () => {
           />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="orange" onClick={toggleModal}>
-            Cancel
-          </Button>
-          <Button variant="orange" onClick={handleEditFullDescription}>
+          
+          <Button variant="orange text-white"  onClick={handleEditFullDescription}>
             Save Changes
+          </Button>
+          <Button variant="black tex-white"  onClick={toggleModal}>
+          Cancel
           </Button>
         </Modal.Footer>
       </Modal>
