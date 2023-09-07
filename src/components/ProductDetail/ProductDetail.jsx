@@ -32,7 +32,7 @@ const ProductDetail = () => {
               <FontAwesomeIcon
                 icon={faArrowLeft}
                 size="2xl"
-                style={{ color: "#f0a202" }}
+                style={{ color: "#DF6A45" }}
               />
             </Button>
           </Link>
@@ -47,7 +47,7 @@ const ProductDetail = () => {
             />
           </Col>
           <Col sm={6} className="d-flex flex-column">
-            <h2 className="text-center" style={{ color: "#f0a202", fontWeight: 'bold' }}>{product.name}</h2>
+            <h2 className="text-center" style={{ color: "#DF6A45", fontWeight: 'bold' }}>{product.name}</h2>
             <p className="align-self-center">{product.fulldescription}</p>
           </Col>
         </Row>
@@ -55,7 +55,7 @@ const ProductDetail = () => {
         {/* Price and Buttons */}
         <Row className="align-items-center" style={{ flex: 2 }}>
           <Col sm={6}>
-            <h3 className="text-center" style={{ color: "#f0a202", fontWeight: 'bold' }}>Price: {product.price} €</h3>
+            <h3 className="text-center" style={{ color: "#DF6A45", fontWeight: 'bold' }}>Price: {product.price} €</h3>
           </Col>
           <Col sm={2} className="d-flex justify-content-center align-items-center">
             {/* Upload Btn */}
@@ -68,7 +68,7 @@ const ProductDetail = () => {
               <FontAwesomeIcon
                 icon={faCirclePlus}
                 size="2xl"
-                style={{ color: "#f0a202" }}
+                style={{ color: "#DF6A45" }}
               />
             </Button>
           </Col>
@@ -84,7 +84,7 @@ const ProductDetail = () => {
               <FontAwesomeIcon
                 icon={faPenToSquare}
                 size="2xl"
-                style={{ color: "#f0a202" }}
+                style={{ color: "#DF6A45" }}
               />
             </Button>
           </Col>
@@ -100,7 +100,7 @@ const ProductDetail = () => {
               <FontAwesomeIcon
                 icon={faTrash}
                 size="2xl"
-                style={{ color: "#f0a202" }}
+                style={{ color: "#DF6A45" }}
               />
             </Button>
           </Col>

@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import { DataContext } from "../Context/DataContext";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import DeleteIcon from "../../assets/icons/delete.png";
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
 import EditProductModal from "../EditProductModal.jsx/EditProductModal";
@@ -85,7 +84,7 @@ const Products = () => {
                   <FontAwesomeIcon
                     icon={faEye}
                     size="2xl"
-                    style={{ color: "#f0a202" }}
+                    style={{ color: "#DF6A45" }}
                   />
                 </Button>
               </Link>
@@ -99,7 +98,7 @@ const Products = () => {
                 <FontAwesomeIcon
                   icon={faPenToSquare}
                   size="2xl"
-                  style={{ color: "#f0a202" }}
+                  style={{ color: "#DF6A45" }}
                 />
               </Button>
 
@@ -117,7 +116,7 @@ const Products = () => {
                 <FontAwesomeIcon
                 icon={faTrash}
                 size="2xl"
-                style={{ color: "#f0a202" }}
+                style={{ color: "#DF6A45" }}
               />
                 )}
               </Button>
