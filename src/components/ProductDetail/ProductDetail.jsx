@@ -1,23 +1,53 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { DataContext } from "../Context/DataContext";
-import { useParams } from "react-router-dom";
-import { Container, Card, Row, Col } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import { Container, Card, Row, Col, Modal, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowLeft,
-  faPenToSquare,
-  faTrash,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 const ProductDetail = () => {
-  const { data } = useContext(DataContext);
+  const { data, setData } = useContext(DataContext);
   const { productId } = useParams();
   const product = data.find((item) => item.id === parseInt(productId));
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editedFullDescription, setEditedFullDescription] = useState(
+    product ? product.fulldescription : ""
+  );
+
+  useEffect(() => {
+    if (product) {
+      setEditedFullDescription(product.fulldescription);
+    }
+  }, [product]);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
+  const handleEditFullDescription = async () => {
+    try {
+      await axios.put(`http://localhost:3000/products/${productId}`, {
+        fulldescription: editedFullDescription,
+      });
+
+      setData((prevData) =>
+        prevData.map((item) =>
+          item.id === parseInt(productId)
+            ? { ...item, fulldescription: editedFullDescription }
+            : item
+        )
+      );
+
+      toggleModal();
+    } catch (error) {
+      console.error("Error al actualizar la fullDescription:", error);
+    }
+  };
+
   if (!product) {
-    return;
+    return null;
   }
 
   return (
@@ -26,7 +56,6 @@ const ProductDetail = () => {
       style={{ minHeight: "100vh", minWidth: "100vw" }}
     >
       <Card>
-        {/*Back Btn */}
         <Row className="align-self-end">
           <Link to="/">
             <Button
@@ -50,30 +79,34 @@ const ProductDetail = () => {
               src={product.img}
               alt={product.name}
               className="w-100 h-100 img-fluid mx-auto"
-              style={{ maxHeight: "90vh", marginTop: "1em", marginLeft: "1em" }}
+              style={{
+                maxHeight: "90vh",
+                marginTop: "1em",
+                marginLeft: "1em",
+              }}
             />
           </Col>
           <Col sm={6} className="d-flex flex-column">
-            <h2 className="text-center" style={{ color: "#DF6A45", fontWeight: 'bold' }}>{product.name}</h2>
+            <h2 className="text-center" style={{ color: "#DF6A45", fontWeight: "bold" }}>
+              {product.name}
+            </h2>
             <p className="align-self-center">{product.fulldescription}</p>
           </Col>
         </Row>
 
-        {/* Price and Buttons */}
         <Row className="align-items-center" style={{ flex: 2 }}>
           <Col sm={6}>
-            <h3 className="text-center" style={{ color: "#DF6A45", fontWeight: 'bold' }}>Price: {product.price} €</h3>
+            <h3 className="text-center" style={{ color: "#DF6A45", fontWeight: "bold" }}>
+              Price: {product.price} €
+            </h3>
           </Col>
-          <Col
-            sm={3}
-            className="d-flex justify-content-center align-items-center"
-          >
-            {/* Edit Btn */}
+          <Col sm={2} className="d-flex justify-content-center align-items-center">
             <Button
               title="Edit product"
               variant="outline-transparent"
               className="w-100 h-100 p-0 mb-3"
               style={{ boxShadow: "none" }}
+              onClick={toggleModal}
             >
               <FontAwesomeIcon
                 icon={faPenToSquare}
@@ -83,11 +116,7 @@ const ProductDetail = () => {
             </Button>
           </Col>
 
-          <Col
-            sm={3}
-            className="d-flex justify-content-center align-items-center"
-          >
-            {/* Delete Btn */}
+          <Col sm={2} className="d-flex justify-content-center align-items-center">
             <Button
               title="Delete product"
               variant="outline-transparent"
@@ -103,6 +132,28 @@ const ProductDetail = () => {
           </Col>
         </Row>
       </Card>
+
+      <Modal show={isModalOpen} onHide={toggleModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Edit Full Description</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <textarea
+            rows="4"
+            cols="50"
+            value={editedFullDescription}
+            onChange={(e) => setEditedFullDescription(e.target.value)}
+          />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="orange" onClick={toggleModal}>
+            Cancel
+          </Button>
+          <Button variant="orange" onClick={handleEditFullDescription}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 };
