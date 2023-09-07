@@ -7,7 +7,6 @@ import AddProductModal from "../AddProductModal/AddProductModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlus, faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 function Header() {
   const [showModal, setShowModal] = useState(false);

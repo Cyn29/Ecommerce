@@ -3,7 +3,7 @@ import { DataContext } from "../Context/DataContext";
 import { useParams, Link } from "react-router-dom";
 import { Container, Card, Row, Col, Modal, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 
 const ProductDetail = () => {
